@@ -9,6 +9,7 @@ const SEARCH_API =
 const form = document.getElementById("form");
 const search = document.getElementById("search");
 const main = document.getElementById("main");
+const popularBtn = document.querySelector(".popular");
 
 const getClassByRate = (vote) => {
   if (vote >= 8) {
@@ -23,7 +24,6 @@ const showMovies = (movies) => {
 
   movies.forEach((movie) => {
     const { title, poster_path, overview } = movie;
-
     const vote_average = Number(movie.vote_average.toFixed(1));
 
     const movieEl = document.createElement("div");
@@ -55,6 +55,11 @@ const getMovies = async (url) => {
 
   showMovies(data.results);
 };
+
+// Show popular movies
+popularBtn.addEventListener("click", () => {
+  getMovies(API_URL);
+});
 
 // Search for the movie title submitted
 form.addEventListener("submit", (e) => {
