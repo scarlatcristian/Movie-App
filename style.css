@@ -27,6 +27,11 @@ header {
   cursor: pointer;
   outline: none;
   border: 2px solid var(--primary-color);
+  transition: all 0.2s ease-in-out;
+}
+
+.popular:hover {
+  transform: scale(1.1);
 }
 
 .search {
@@ -62,6 +67,14 @@ main {
   position: relative;
   overflow: hidden;
   border-radius: 3px;
+  box-shadow: 0.5rem 0.5rem 0.4rem rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.movie:hover {
+  transform: scale(1.05);
+  box-shadow: 0.7rem 0.7rem 0.6rem rgba(0, 0, 0, 0.4);
 }
 
 .movie img {
